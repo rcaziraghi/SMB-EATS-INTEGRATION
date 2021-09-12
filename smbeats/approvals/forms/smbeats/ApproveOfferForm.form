@@ -1,0 +1,54 @@
+{
+    "id": "approveofferform",
+    "schemaVersion": "1.1.0",
+    "name": "ApproveOfferForm",
+    "revision": "1",
+    "type": "task",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "review_the_bellow_offer",
+            "type": "section",
+            "title": "Review the Bellow Offer",
+            "content": [
+                {
+                    "id": "recipient",
+                    "type": "string",
+                    "label": "Recipient",
+                    "readOnly": true,
+                    "value": "${context.recipient}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "offer",
+                    "type": "string",
+                    "label": "Offer",
+                    "readOnly": true,
+                    "value": "${context.offer.OffersInfo[0].OfferType}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "offer_description",
+                    "type": "string",
+                    "label": "Offer Description",
+                    "readOnly": true,
+                    "value": "${context.offer.OffersInfo[0].OfferDescription}",
+                    "constraints": {
+                        "required": false
+                    }
+                }
+            ]
+        }
+    ],
+    "decisions": [
+        {
+            "id": "approve",
+            "text": "Approve",
+            "decisionType": "positive"
+        }
+    ]
+}
